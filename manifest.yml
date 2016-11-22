@@ -1,0 +1,12 @@
+applications:
+- name: objectstorepub
+  path: .
+  memory: 1024M
+  instances: 1
+  domain: mybluemix.net
+  hosts:
+  - objectstorepub 
+  disk_quota: 512M
+  buildpack: python_buildpack
+  services:
+  - objectstoreraj

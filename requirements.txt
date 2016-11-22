@@ -1,0 +1,4 @@
+Flask==0.10.1
+requests==2.9.1
+python-keystoneclient==1.7.1
+python-swiftclient==2.6.0
