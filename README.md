@@ -4,13 +4,13 @@ A web app that serves files out of your IBM Object Storage. openobjectstore foll
 
 [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/ibm-cds-labs/openobjectstore.git)
 
-![Bluemix Deployments](https://deployment-tracker.mybluemix.net/stats/4f7252bee5e6aa6f1611b130ee63dd98/badge.svg)
+![Bluemix Deployments](https://deployment-tracker.mybluemix.net/stats/7915d5ec79666591eac01ac5757934a7/badge.svg)
 
 ## Running the app on Bluemix
 
 1. If you do not already have a Bluemix account, [sign up here][bluemix_signup_url]
 2. Create an instance of Object Storage in Bluemix
-3. Add the Object Storage instance name to the end of `manifest.yml`
+3. Add the Object Storage instance name to the end of `manifest.yml` (changing `objectstoreraj` to whatever name you gave your instance)
 
 	```
 	services:
