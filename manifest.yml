@@ -1,8 +1,8 @@
 ---
 declared-services:
   objectstorepublic:
-    label: object-storage
-    plan: Standard
+    label: Object-Storage
+    plan: standard
 
 applications:
 - name: openobjectstore
