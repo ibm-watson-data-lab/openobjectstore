@@ -16,10 +16,9 @@ A web app that serves files out of your IBM Object Storage.
 openobjectstore follows RESTful principles and is built on Python Flask.
 
 Endpoints:
-- /: returns help (method: Welcome)
-- /obj: returns a list of containers (method: GetObjStoreInfo)
-- /obj/<container name>: returns a list of objects in the container (method: GetObjStoContainerInfo)
-- /obj/<container name>/<object name>: returns the object (method: GetObjectStorage)
+- /: returns a list of containers (method: GetObjStoreInfo)
+- /<container name>: returns a list of objects in the container (method: GetObjStoContainerInfo)
+- /<container name>/<object name>: returns the object (method: GetObjectStorage)
 """
 
 import json
@@ -54,17 +53,13 @@ if 'VCAP_APPLICATION' in os.environ:
 # Emit Bluemix deployment event
 cf_deployment_tracker.track()
 
-@app.route('/')
-def Welcome():
-    return app.send_static_file("index.html")
-
-@app.route('/obj', methods=['GET'])
+@app.route('/', methods=['GET'])
 def GetObjStoreInfo():
     try:
         ibmobjectstoreconn = swiftclient.Connection(key=password, authurl=authurl, auth_version='3', os_options={"project_id": projectId,"user_id": userId,"region_name": region})
         conns = []
         for container in ibmobjectstoreconn.get_account()[1]:
-            container['accessURL'] = thehost + "/obj/" + container['name']
+            container['accessURL'] = thehost + "/" + container['name']
             container['objects'] = container['count']
             del container['count'] 
             conns.append(container)
@@ -73,21 +68,21 @@ def GetObjStoreInfo():
     except ClientException as ce:
         return MakeJSONMsgResponse({"message":ce.msg,"containername":container,"filename":filename}, 404)
 
-@app.route('/obj/<container>', methods=['GET'])
+@app.route('/<container>', methods=['GET'])
 def GetObjStoContainerInfo(container):
     try:
         ibmobjectstoreconn = swiftclient.Connection(key=password, authurl=authurl, auth_version='3', os_options={"project_id": projectId,"user_id": userId,"region_name": region})
         objs = []
         for data in ibmobjectstoreconn.get_container(container)[1]:
             del data['hash']
-            data['downloadURL'] = thehost + "/obj/" + container + "/" + data['name']
+            data['downloadURL'] = thehost + "/" + container + "/" + data['name']
             objs.append(data)
         jobjs = '{"objects":'+json.dumps(objs)+'}'
         return Response(jobjs, mimetype='application/json', status=200)
     except ClientException as ce:
         return MakeJSONMsgResponse({"message":ce.msg+". Bad container name?","containername":container}, 404)
 
-@app.route('/obj/<container>/<filename>', methods=['GET'])
+@app.route('/<container>/<filename>', methods=['GET'])
 def GetObjectStorage(container, filename):
     if 'VCAP_SERVICES' not in os.environ:
         return MakeJSONMsgResponse({"message":"cannot authenticate"}, 500)

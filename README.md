@@ -7,16 +7,8 @@ A web app that serves files out of your IBM Object Storage. openobjectstore foll
 ## Running the app on Bluemix
 
 1. If you do not already have a Bluemix account, [sign up here][bluemix_signup_url]
-2. Create an instance of Object Storage in Bluemix
-3. Add the Object Storage instance name to the end of `manifest.yml` (changing `objectstoreraj` to whatever name you gave your instance)
-
-	```
-	services:
-	- objectstorename
-	```
-
-3. **Click the "Deploy to Bluemix" button above**, 
-4. OR:
+2. **Click the "Deploy to Bluemix" button above**, 
+3. OR:
 	1. Download and install the [Cloud Foundry CLI][cloud_foundry_url] tool
 	2. Clone the app to your local environment from your terminal using the following command:
 
