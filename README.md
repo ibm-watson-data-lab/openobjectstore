@@ -2,9 +2,7 @@
 
 A web app that serves files out of your IBM Object Storage. openobjectstore follows RESTful principles and is built on Python Flask.
 
-[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/ibm-cds-labs/openobjectstore.git)
-
-![Bluemix Deployments](https://deployment-tracker.mybluemix.net/stats/7915d5ec79666591eac01ac5757934a7/badge.svg)
+[![Deploy to Bluemix](https://deployment-tracker.mybluemix.net/stats/7915d5ec79666591eac01ac5757934a7/button.svg)](https://bluemix.net/deploy?repository=https://github.com/ibm-cds-labs/openobjectstore)
 
 ## Running the app on Bluemix
 
@@ -117,9 +115,3 @@ This app is covered by the Apache 2.0 license. For more information, see [LICENS
 [download_python_url]: https://www.python.org/downloads/
 [virtualenv_url]: https://virtualenv.pypa.io/en/stable/
 [issues_url]: https://github.com/ibm-cds-labs/openobjectstore/issues
-
-
-### 2. Bind an ObjectStore instance to this application
-
-
-### 3. Enjoy
