@@ -1,6 +1,10 @@
 # openobjectstore
 
-A web app that serves files out of your IBM Object Storage. openobjectstore follows RESTful principles and is built on Python Flask.
+A Python Flask web app that serves files out of your IBM Object Storage without requiring authentication. openobjectstore follows RESTful principles. 
+
+IBM Object Storage is a lot like Amazon S3. Both enable storage and retrieval of any amount of data from anywhere on the web. Customers use it as a bulk repository, or "data lake," for analytics; backup & recovery; disaster recovery; and serverless computing. Many cloud-native applications even use it as primary storage, such as [http://datascience.ibm.com](http://datascience.ibm.com).
+
+IBM Object Storage, out-of-the-box, doesn't provide public, unauthenticated access to files. This app fills that gap.
 
 [![Deploy to Bluemix](https://deployment-tracker.mybluemix.net/stats/7915d5ec79666591eac01ac5757934a7/button.svg)](https://bluemix.net/deploy?repository=https://github.com/ibm-cds-labs/openobjectstore)
 
