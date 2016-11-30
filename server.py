@@ -12,18 +12,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 """
-The docstring for a module should generally list the classes,
-exceptions and functions (and any other objects) that are exported by
-the module, with a one-line summary of each.
+A web app that serves files out of your IBM Object Storage. 
+openobjectstore follows RESTful principles and is built on Python Flask.
+
+Endpoints:
+- /: returns help (method: Welcome)
+- /obj: returns a list of containers (method: GetObjStoreInfo)
+- /obj/<container name>: returns a list of objects in the container (method: GetObjStoContainerInfo)
+- /obj/<container name>/<object name>: returns the object (method: GetObjectStorage)
 """
 
-# import collections
 import json
 import os
-# import time
-# import urllib
+import cf_deployment_tracker
 
-# import requests
 # for objectstorage
 import swiftclient
 from flask import Flask, Response #, jsonify, request, send_file
@@ -48,6 +50,9 @@ thehost = "http://0.0.0.0:5000"
 if 'VCAP_APPLICATION' in os.environ:
     appinfo = json.loads(os.environ['VCAP_APPLICATION'])
     thehost = "https://" + appinfo['application_uris'][0]
+
+# Emit Bluemix deployment event
+cf_deployment_tracker.track()
 
 @app.route('/')
 def Welcome():
@@ -106,4 +111,4 @@ def MakeJSONMsgResponse(themsg, statuscode):
     return Response(json.dumps(themsg), mimetype='application/json', status=statuscode)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=int(PORT), threaded=True, debug=True)
+    app.run(host='0.0.0.0', port=int(PORT), threaded=True, debug=False)

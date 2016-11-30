@@ -4,8 +4,8 @@ applications:
   memory: 1024M
   instances: 1
   domain: mybluemix.net
-  hosts:
-  - openobjectstore
+  #random-route: true
+  host: openobjectstore
   disk_quota: 512M
   buildpack: python_buildpack
   services:
