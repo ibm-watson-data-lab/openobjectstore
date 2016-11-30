@@ -8,4 +8,4 @@ applications:
   disk_quota: 512M
   buildpack: python_buildpack
   services:
-  # - objectstoreraj
+  - objectstoreraj
