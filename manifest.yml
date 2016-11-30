@@ -1,11 +1,17 @@
+---
+declared-services:
+  objectstorepublic:
+    label: object-storage
+    plan: Standard
+
 applications:
 - name: openobjectstore
   path: .
   memory: 1024M
   instances: 1
   domain: mybluemix.net
-  #random-route: true
+  random-route: true
   disk_quota: 512M
   buildpack: python_buildpack
   services:
-  - objectstoreraj
+  - objectstorepublic
