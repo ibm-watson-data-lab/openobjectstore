@@ -5,8 +5,7 @@ applications:
   instances: 1
   domain: mybluemix.net
   #random-route: true
-  host: openobjectstore
   disk_quota: 512M
   buildpack: python_buildpack
   services:
-  - objectstoreraj
+  # - objectstoreraj
