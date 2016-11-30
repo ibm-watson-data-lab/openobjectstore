@@ -1,11 +1,11 @@
 applications:
-- name: objectstorepub
+- name: openobjectstore
   path: .
   memory: 1024M
   instances: 1
   domain: mybluemix.net
   hosts:
-  - objectstorepub 
+  - openobjectstore
   disk_quota: 512M
   buildpack: python_buildpack
   services:
