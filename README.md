@@ -82,6 +82,20 @@ For more detailed information on troubleshooting your application, see the [Trou
 ## Contribute
 We are more than happy to accept external contributions to this project, be it in the form of issues and pull requests. If you find a bug, please report it via the [Issues section][issues_url] or even better, fork the project and submit a pull request with your fix! Pull requests will be evaulated on an individual basis based on value add to the sample application.
 
+Here are some features we're looking to implement.
+
+### Resource hiding
+
+You may not want everything in your Object Storage to be public. There should be a configuration file -- and code that uses this file -- that specifies containers and/or objects within a public container that should be hidden from the public service interface. 
+
+### Standard formats
+
+It would be nice to implement some interoperable formats such as [CKAN DCAT](http://ckan.org/open-standards/) and [Dublin Core](http://dublincore.org/documents/dces/). It would also be nice to have an HTML representation.
+
+### CRUD
+
+In addition to the existing HTTP GET verb, we'd like to implement PUT and POST for updating and creating resources.
+
 ## Privacy Notice
 
 The `openobjectstore` sample web application includes code to track deployments to Bluemix and other Cloud Foundry platforms. The following information is sent to a [Deployment Tracker](https://github.com/IBM-Bluemix/cf-deployment-tracker-service) service on each deployment:
