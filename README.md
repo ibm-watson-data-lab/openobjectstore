@@ -2,34 +2,36 @@
 
 A Python Flask web app that serves files out of your IBM Object Storage without requiring authentication. openobjectstore follows RESTful principles. 
 
-IBM Object Storage is a lot like Amazon S3. Both enable storage and retrieval of any amount of data from anywhere on the web. Customers use it as a bulk repository, or "data lake," for analytics; backup & recovery; disaster recovery; and serverless computing. Many cloud-native applications even use it as primary storage, such as [http://datascience.ibm.com](http://datascience.ibm.com).
+IBM Object Storage is a lot like Amazon S3. Both enable storage and retrieval of any amount of data from anywhere on the web. Customers use it as a bulk repository, or "data lake," for analytics, backup & recovery, disaster recovery, and serverless computing. Many cloud-native applications even use it as primary storage, like [http://datascience.ibm.com](http://datascience.ibm.com).
 
 IBM Object Storage, out-of-the-box, doesn't provide public, unauthenticated access to files. This app fills that gap.
 
-[![Deploy to Bluemix](https://deployment-tracker.mybluemix.net/stats/7915d5ec79666591eac01ac5757934a7/button.svg)](https://bluemix.net/deploy?repository=https://github.com/ibm-cds-labs/openobjectstore)
-
 ## Running the app on Bluemix
 
-1. If you do not already have a Bluemix account, [sign up here][bluemix_signup_url]
-2. **Click the "Deploy to Bluemix" button above**, 
-3. OR:
-	1. Download and install the [Cloud Foundry CLI][cloud_foundry_url] tool
-	2. Clone the app to your local environment from your terminal using the following command:
+1. If you do not already have a Bluemix account, [sign up](https://console.ng.bluemix.net/registration/).
+2. Deploy the app in one of 2 ways: 
+   - Click the **Deploy to Bluemix** button
 
-		```
+      [![Deploy to Bluemix](https://deployment-tracker.mybluemix.net/stats/7915d5ec79666591eac01ac5757934a7/button.svg)](https://bluemix.net/deploy?repository=https://github.com/ibm-cds-labs/openobjectstore) 
+   
+   - Or, deploy for local development:
+	   1. Download and install the [Cloud Foundry CLI][cloud_foundry_url] tool
+	   2. Clone the app to your local environment from your terminal using the following command:
+
+	      	```
 		$ git clone https://github.com/ibm-cds-labs/openobjectstore.git
 		 ```
 
-	3. `cd` into this newly created directory
-	4. Connect to Bluemix in the command line tool and follow the prompts to log in.
+	   3. `cd` into this newly created directory
+	   4. Connect to Bluemix in the command line tool and follow the prompts to log in.
 
-		```
+		   ```
 		$ cf api https://api.ng.bluemix.net
 		$ cf login
 		```
 
-	5. Push the app to Bluemix.
-
+	   5. Push the app to Bluemix.
+   
 		```
 		$ cf push
 		```
@@ -39,7 +41,7 @@ And voila! You now have your very own instance of the Python Hello World sample 
 ## Run the app locally
 1. If you do not already have a Bluemix account, [sign up here][bluemix_signup_url]
 
-2. If you have not already, [download Python][download_python_url] and install it on your local machine. There are a number of best practices for developing locally with Python and we will leave the excersice of learning those up to you.
+2. If you have not already, [download Python][download_python_url] and install it on your local machine. There are a number of best practices for developing locally with Python, that we assume you know (or will now quickly research and learn).
 
 3. Clone the app to your local environment from your terminal using the following command:
 
@@ -68,7 +70,7 @@ And voila! You now have your very own instance of the Python Hello World sample 
   $ python server.py
   ```
 
-This command will create a new Flask app and start your application. When your app has started, your console will print that your `Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)`.
+This command creates a new Flask app and starts your application. When your app has started, your console prints that you're `Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)`.
 
 ## Troubleshooting
 
@@ -80,9 +82,9 @@ The primary source of debugging information for your Bluemix app is the logs. To
 For more detailed information on troubleshooting your application, see the [Troubleshooting section](https://www.ng.bluemix.net/docs/troubleshoot/troubleshoot.html) in the Bluemix documentation.
 
 ## Contribute
-We are more than happy to accept external contributions to this project, be it in the form of issues and pull requests. If you find a bug, please report it via the [Issues section][issues_url] or even better, fork the project and submit a pull request with your fix! Pull requests will be evaulated on an individual basis based on value add to the sample application.
+We are more than happy to accept external contributions to this project, be it in the form of issues and pull requests. If you find a bug, please [create an issue](https://github.com/ibm-cds-labs/openobjectstore/issues) or even better, fork the project and submit a pull request with your fix! Pull requests will be evaulated on an individual basis based on value add to the sample application.
 
-Here are some features we're looking to implement.
+Here are some features we're looking to implement:
 
 ### Resource hiding
 
