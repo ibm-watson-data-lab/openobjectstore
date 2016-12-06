@@ -30,6 +30,12 @@ IBM Object Storage, out-of-the-box, doesn't provide public, unauthenticated acce
 		$ cf login
 		```
 
+	   5. Provision an instance of Object Storage
+
+		```
+		$ cf create-service objectstorage standard objectstorepublic
+		```
+
 	   5. Push the app to Bluemix.
    
 		```
