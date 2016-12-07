@@ -4,7 +4,7 @@ A Python Flask web app that serves files out of your IBM Object Storage without 
 
 IBM Object Storage is a lot like Amazon S3. Both enable storage and retrieval of any amount of data from anywhere on the web. Customers use it as a bulk repository, or "data lake," for analytics, backup & recovery, disaster recovery, and serverless computing. Many cloud-native applications even use it as primary storage, like [http://datascience.ibm.com](http://datascience.ibm.com).
 
-IBM Object Storage, out-of-the-box, doesn't provide public, unauthenticated access to files. This app fills that gap.
+IBM Object Storage, out-of-the-box, doesn't provide public, unauthenticated access to files. This app fills that gap. For more details, [read this blog post introducing open object store](https://developer.ibm.com/clouddataservices/2016/12/07/build-a-simple-data-portal-with-python-and-ibm-object-storage/).
 
 ## Running the app on Bluemix
 
