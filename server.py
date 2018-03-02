@@ -32,7 +32,7 @@ from keystoneclient import client
 from swiftclient import ClientException
 from swiftclient.service import SwiftService, SwiftError
 
-PORT = os.getenv('VCAP_APP_PORT', '5000')
+PORT = os.getenv('PORT', '5000')
 app = Flask(__name__)
 
 if 'VCAP_SERVICES' in os.environ:
