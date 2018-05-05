@@ -20,4 +20,4 @@ setup(
     description='A web app that serves files out of your IBM Object Storage',
     long_description=long_description,
     url='https://github.com/ibm-cds-labs/openobjectstore',
-    license='Apache-2.0'
+    license='Apache-2.0')
